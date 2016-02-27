@@ -13,3 +13,5 @@ Using exploit with Secret Net 7.4.577.0:
 Secret Net Studio 8.0.616.0 beta (currently I'm not able to test my exploit with the most recent version because vendor removed Secret Net Studio from Downloads page):
 
 <img src="https://raw.githubusercontent.com/Cr4sh/secretnet_expl/43a1289ec96e880708ccc7150a42275ff8c1e02e/secretnet-studio-8.0.png" width="620" />
+
+To fix this vulnerability open Control Pannel, then click Programs and Features and uninstall Secret Net.
