@@ -12,4 +12,4 @@ Using exploit with Secret Net 7.4.577.0:
 
 Secret Net Studio 8.0.616.0 beta (currently I'm not able to test my exploit with the most recent version because vendor removed Secret Net Studio from Downloads page):
 
-<img src="https://raw.githubusercontent.com/Cr4sh/secretnet_expl/c38df8292674320f44d87f33822a328ed0113dd8/secretnet-studio-8.0.png" width="600" />
+<img src="https://raw.githubusercontent.com/Cr4sh/secretnet_expl/97666b17bc99ec2b39730c5d2b4decccce0d2d67/secretnet-studio-8.0.png" width="620" />
