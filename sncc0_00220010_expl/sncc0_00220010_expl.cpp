@@ -208,8 +208,8 @@ int _tmain(int argc, _TCHAR* argv[])
 
     printf("*********************************************************************\n\n");
     printf("  Secret Net / Secret Net Studio local privileges escalation exploit\n");
-    printf("  by Dmytro Oleksiuk ~ http://blog.cr4.sh\n");
-    printf("\n*******************************************************************\n");
+    printf("  by Dmytro Oleksiuk ~ http://blog.cr4.sh\n\n");
+    printf("*********************************************************************\n");
     
     BOOL bUseRop = FALSE;
     OSVERSIONINFOA Version;    
