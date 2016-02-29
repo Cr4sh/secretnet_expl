@@ -6,7 +6,7 @@ For detailed vulnerability analysis and explanation of how sncc0_00220010_expl c
 
 This exploit was tested with 64-bit versions of Windows 7, 8, 8.1 and 10. On SMEP enabled systems you have to manually restore original value of CR4 register to avoid PatchGuard bugchecks, for real life usage example please check my [fwexpl](https://github.com/Cr4sh/fwexpl) project.
 
-Using exploit with [Secret Net 7.4.577.0](ftp://ftp.securitycode.ru/Demo/sn/sn7/577_00/sn7.4.577.00.dst.rar), the most recent stable version at his moment:
+Using exploit with [Secret Net 7.4.577.0](http://bit.ly/1RAJbG0), the most recent stable version at his moment:
 
 <img src="https://raw.githubusercontent.com/Cr4sh/secretnet_expl/43a1289ec96e880708ccc7150a42275ff8c1e02e/secretnet-7.4.png" width="600" />
 
